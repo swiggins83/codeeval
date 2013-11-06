@@ -1,17 +1,10 @@
 import sys
 
-def main():
-    for arg in sys.argv[1:]:
-        init(arg)
-
 def init(pathname):
     """Find answer to fibonacci sequence of number n read in from a file."""
 
-    f = open(pathname,'r')
-
-    for line in f.readlines():
-        n = int(line.split("\n")[0])
-        print fib(n)
+    for line in open(pathname, 'r').readlines():
+        print fib(int(line.split("\n")[0]))
 
 def fib(n):
     """Make fibonacci sequence."""
@@ -25,4 +18,5 @@ def fib(n):
 
 
 if __name__ == "__main__":
-    main()
+    for arg in sys.argv[1:]:
+        init(arg)
