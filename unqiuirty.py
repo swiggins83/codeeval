@@ -1,14 +1,8 @@
 import sys
 
-def main():
-    for arg in sys.argv[1:]:
-        uniquity(arg)
-
 def uniquity(pathname):
 
-    f = open(pathname,'r')
-
-    for line in f.readlines():
+    for line in open(pathname, 'r').readlines():
         uniques = []
         line = line.split(",")
 
@@ -25,4 +19,5 @@ def uniquity(pathname):
 
 
 if __name__ == "__main__":
-    main()
+    for arg in sys.argv[1:]:
+        uniquity(arg)
