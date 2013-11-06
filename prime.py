@@ -1,9 +1,5 @@
 import sys
 
-
-def main():
-    primes(sys.argv[1:])
-
 def primes(pathname):
 
     dontuse = []
@@ -14,11 +10,11 @@ def primes(pathname):
             if i in dontuse:
                 print 'dont'
             else:
-                if isprime(i,dontuse):
+                if isprime(i, dontuse):
                     print i
 
 
-def isprime(n,dontuse):
+def isprime(n, dontuse):
     if n is 2:
         return True
     else:
@@ -30,4 +26,4 @@ def isprime(n,dontuse):
 
 
 if __name__ == "__main__":
-    main()
+    primes(sys.argv[1:])
