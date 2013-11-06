@@ -1,20 +1,9 @@
 import sys
 
-
-def main():
-
-    for arg in sys.argv[1:]:
-        fizzbuzz(arg)
-
-
 def fizzbuzz(pathname):
     """Replaces numbers in a string if it is divisible by params."""
 
-    # open file
-    f = open(pathname, 'r')
-
-    # iterate through files lines
-    for line in f.readlines():
+    for line in open(pathname, 'r').readlines():
         split = str(line).split(" ")
         for i in range(1,int(split[2])+1):
 
@@ -29,6 +18,6 @@ def fizzbuzz(pathname):
 
         print
 
-
 if __name__ == "__main__":
-    main()
+    for arg in sys.argv[1:]:
+        fizzbuzz(arg)
