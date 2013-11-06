@@ -1,15 +1,8 @@
 import sys
 
-def main():
-    for arg in sys.argv[1:]:
-        lowbigmult(arg)
-
-
 def lowbigmult(pathname):
 
-    f = open(str(pathname),'r')
-
-    for line in f.readlines():
+    for line in open(pathname, 'r').readlines():
         x = int(line.split(",")[0])
         n = int(line.split(",")[1])
 
@@ -19,4 +12,5 @@ def lowbigmult(pathname):
         print n*i
 
 if __name__ == "__main__":
-    main()
+    for arg in sys.argv[1:]:
+        lowbigmult(arg)
