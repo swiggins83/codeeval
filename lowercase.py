@@ -1,11 +1,10 @@
 import sys
 import string
 
-def main():
-    for arg in sys.argv[1:]:
-        f = open(arg,'r')
-        for line in f.readlines():
-            print line.lower()
+def main(pathname):
+	for line in open(pathname, 'r').readlines():
+		print line.lower()
 
 if __name__ == "__main__":
-    main()
+    for arg in sys.argv[1:]:
+		lower(arg)
