@@ -1,17 +1,10 @@
 import sys
 import string
 
-def main():
-    for arg in sys.argv[1:]:
-        remchar(arg)
-
-
 def remchar(pathname):
     """Remove characters from a substring from a string."""
 
-    f = open(pathname,'r')
-
-    for line in f.readlines():
+    for line in open(pathname, 'r').readlines():
         # find letters to scrub and iterate through them and the strings
         splits = str(line).split(", ")
         scrubs = splits[1].split()
@@ -21,4 +14,5 @@ def remchar(pathname):
         print splits[0]
 
 if __name__ == "__main__":
-    main()
+    for arg in sys.argv[1:]:
+        remchar(arg)
